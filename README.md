@@ -9,6 +9,7 @@ A minimalist, interactive quiz game built with HTML, CSS, and JavaScript. Test y
 |----------------|----------------|  
 | ![Question]
 [Screenshot_2025-06-21-15-53-59-73_f9a7afa717ced9e1fc9be9833291031a.jpg](https://github.com/princeGupta131/Quiz-game/blob/main/Screenshot_2025-06-21-15-53-59-73_f9a7afa717ced9e1fc9be9833291031a.jpg) | 
+|
 ([quiz-screenshot2.png](https://github.com/princeGupta131/Quiz-game/blob/main/Screenshot_2025-06-21-15-54-06-53_f9a7afa717ced9e1fc9be9833291031a.jpg)
 | 
  🛠️ How It Works  
