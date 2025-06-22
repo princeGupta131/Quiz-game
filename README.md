@@ -4,6 +4,10 @@
 A minimalist, interactive quiz game built with HTML, CSS, and JavaScript. Test your knowledge with randomized trivia questions!  
 
 ---
+ 🖥️ Screenshots  
+| Question Screen | Correct Answer |  
+|----------------|----------------|  
+| ![Question](quiz-screenshot1.png) | ![Correct](quiz-screenshot2.png) | !start(quiz-screenshot3.png)
 
  🛠️ How It Works  
 1. Click **"Start"** to load a random question  
