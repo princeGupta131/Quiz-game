@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="learning.css">
+  <title>quiz game </title>
+</head>
+<body>
+
+<h1>
+Deadly questions!
+</h1>
+<div id="mahan">
+<div id="questions">.
+<input id ="display" readonly>
+<button id="start">start</button>
+</div >
+<div id="option-box">
+<button type="submit" id="a"class="options">a)......</button>  
+<button id="b" type="submit" class="options">b)......</button> 
+<button id="c" type="submit" class="options">c)......</button> 
+<button id="d" type="submit" class="options">d)......</button> 
+</div>
+</div>  
+<script src="learning.js"></script>
+</body>
+</html>
