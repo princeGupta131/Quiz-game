@@ -1,0 +1,459 @@
+display = document.querySelector('#display');
+function displayQuestion(str) {
+  display.value = str;
+}
+start = document.querySelector('#start');
+
+let a = document.querySelector('#a');
+let b = document.querySelector('#b');
+let c = document.querySelector('#c');
+let d = document.querySelector('#d');
+
+const questions = [
+  {
+    question: 'The color of blood is red due to presence of-',
+    answers: ['hemoglobin', 'chlorophyll', 'osteology', 'iron'],
+    correctAnswer: 'hemoglobin'
+  },
+  {
+    question: 'Which planet is known as the Red Planet?',
+    answers: ['Venus', 'Mars', 'Jupiter', 'Saturn'],
+    correctAnswer: 'Mars'
+  },
+  {
+    question: 'What is the capital of France?',
+    answers: ['London', 'Berlin', 'Paris', 'Madrid'],
+    correctAnswer: 'Paris'
+  },
+  {
+    question: 'Who painted the Mona Lisa?',
+    answers: ['Vincent van Gogh', 'Pablo Picasso', 'Leonardo da Vinci', 'Michelangelo'],
+    correctAnswer: 'Leonardo da Vinci'
+  },
+  {
+    question: 'What is the largest ocean on Earth?',
+    answers: ['Atlantic Ocean', 'Indian Ocean', 'Arctic Ocean', 'Pacific Ocean'],
+    correctAnswer: 'Pacific Ocean'
+  },
+  {
+    question: 'Which element has the chemical symbol "O"?',
+    answers: ['Gold', 'Oxygen', 'Osmium', 'Oganesson'],
+    correctAnswer: 'Oxygen'
+  },
+  {
+    question: 'Who wrote "Romeo and Juliet"?',
+    answers: ['Charles Dickens', 'William Shakespeare', 'Jane Austen', 'Mark Twain'],
+    correctAnswer: 'William Shakespeare'
+  },
+  {
+    question: 'What is the hardest natural substance on Earth?',
+    answers: ['Gold', 'Iron', 'Diamond', 'Quartz'],
+    correctAnswer: 'Diamond'
+  },
+  {
+    question: 'Which country is home to the kangaroo?',
+    answers: ['South Africa', 'Brazil', 'Australia', 'New Zealand'],
+    correctAnswer: 'Australia'
+  },
+  {
+    question: 'What is the main component of the Sun?',
+    answers: ['Liquid lava', 'Hydrogen', 'Oxygen', 'Carbon dioxide'],
+    correctAnswer: 'Hydrogen'
+  },
+  {
+    question: 'How many continents are there on Earth?',
+    answers: ['5', '6', '7', '8'],
+    correctAnswer: '7'
+  },
+  {
+    question: 'Which organ pumps blood throughout the body?',
+    answers: ['Liver', 'Brain', 'Heart', 'Lungs'],
+    correctAnswer: 'Heart'
+  },
+  {
+    question: 'What is the largest mammal in the world?',
+    answers: ['Elephant', 'Blue Whale', 'Giraffe', 'Polar Bear'],
+    correctAnswer: 'Blue Whale'
+  },
+  {
+    question: 'Which gas do plants absorb from the atmosphere?',
+    answers: ['Oxygen', 'Nitrogen', 'Carbon dioxide', 'Hydrogen'],
+    correctAnswer: 'Carbon dioxide'
+  },
+  {
+    question: 'What is the tallest mountain in the world?',
+    answers: ['K2', 'Mount Kilimanjaro', 'Mount Everest', 'Mount Fuji'],
+    correctAnswer: 'Mount Everest'
+  },
+  {
+    question: 'Which country is known as the Land of the Rising Sun?',
+    answers: ['China', 'South Korea', 'Japan', 'Thailand'],
+    correctAnswer: 'Japan'
+  },
+  {
+    question: 'What is the currency of the United Kingdom?',
+    answers: ['Euro', 'Dollar', 'Pound', 'Yen'],
+    correctAnswer: 'Pound'
+  },
+  {
+    question: 'Which planet is closest to the Sun?',
+    answers: ['Venus', 'Earth', 'Mercury', 'Mars'],
+    correctAnswer: 'Mercury'
+  },
+  {
+    question: 'Who discovered gravity?',
+    answers: ['Albert Einstein', 'Isaac Newton', 'Galileo Galilei', 'Nikola Tesla'],
+    correctAnswer: 'Isaac Newton'
+  },
+  {
+    question: 'What is the largest desert in the world?',
+    answers: ['Sahara Desert', 'Arabian Desert', 'Gobi Desert', 'Antarctica'],
+    correctAnswer: 'Antarctica'
+  },
+  {
+    question: 'Which animal is known as the "King of the Jungle"?',
+    answers: ['Tiger', 'Elephant', 'Lion', 'Gorilla'],
+    correctAnswer: 'Lion'
+  },
+  {
+    question: 'What is the capital of Canada?',
+    answers: ['Toronto', 'Vancouver', 'Ottawa', 'Montreal'],
+    correctAnswer: 'Ottawa'
+  },
+  {
+    question: 'Which language has the most native speakers?',
+    answers: ['English', 'Spanish', 'Hindi', 'Mandarin Chinese'],
+    correctAnswer: 'Mandarin Chinese'
+  },
+  {
+    question: 'What is the smallest prime number?',
+    answers: ['0', '1', '2', '3'],
+    correctAnswer: '2'
+  },
+  {
+    question: 'Which year did World War II end?',
+    answers: ['1943', '1945', '1947', '1950'],
+    correctAnswer: '1945'
+  },
+  {
+    question: 'What is the chemical symbol for gold?',
+    answers: ['Go', 'Gd', 'Au', 'Ag'],
+    correctAnswer: 'Au'
+  },
+  {
+    question: 'Which planet has the most moons?',
+    answers: ['Jupiter', 'Saturn', 'Mars', 'Neptune'],
+    correctAnswer: 'Saturn'
+  },
+  {
+    question: 'Who was the first president of the United States?',
+    answers: ['Thomas Jefferson', 'Abraham Lincoln', 'George Washington', 'John Adams'],
+    correctAnswer: 'George Washington'
+  },
+  {
+    question: 'What is the largest bone in the human body?',
+    answers: ['Tibia', 'Femur', 'Humerus', 'Pelvis'],
+    correctAnswer: 'Femur'
+  },
+  {
+    question: 'Which country hosted the 2016 Summer Olympics?',
+    answers: ['Japan', 'China', 'Brazil', 'Russia'],
+    correctAnswer: 'Brazil'
+  },
+  {
+    question: 'What is the capital of Japan?',
+    answers: ['Kyoto', 'Osaka', 'Tokyo', 'Hiroshima'],
+    correctAnswer: 'Tokyo'
+  },
+  {
+    question: 'Which gas makes up most of the Earth\'s atmosphere?',
+    answers: ['Oxygen', 'Carbon dioxide', 'Nitrogen', 'Hydrogen'],
+    correctAnswer: 'Nitrogen'
+  },
+  {
+    question: 'What is the fastest land animal?',
+    answers: ['Lion', 'Cheetah', 'Pronghorn Antelope', 'Greyhound'],
+    correctAnswer: 'Cheetah'
+  },
+  {
+    question: 'Which country has the largest population?',
+    answers: ['India', 'United States', 'China', 'Indonesia'],
+    correctAnswer: 'China'
+  },
+  {
+    question: 'What is the main component of natural gas?',
+    answers: ['Methane', 'Ethane', 'Propane', 'Butane'],
+    correctAnswer: 'Methane'
+  },
+  {
+    question: 'Which instrument measures atmospheric pressure?',
+    answers: ['Thermometer', 'Barometer', 'Hygrometer', 'Anemometer'],
+    correctAnswer: 'Barometer'
+  },
+  {
+    question: 'Who invented the telephone?',
+    answers: ['Thomas Edison', 'Alexander Graham Bell', 'Nikola Tesla', 'Guglielmo Marconi'],
+    correctAnswer: 'Alexander Graham Bell'
+  },
+  {
+    question: 'What is the largest organ in the human body?',
+    answers: ['Liver', 'Brain', 'Heart', 'Skin'],
+    correctAnswer: 'Skin'
+  },
+  {
+    question: 'Which country is both an island and a continent?',
+    answers: ['Greenland', 'Australia', 'Madagascar', 'New Zealand'],
+    correctAnswer: 'Australia'
+  },
+  {
+    question: 'What is the freezing point of water in Fahrenheit?',
+    answers: ['0°F', '32°F', '100°F', '212°F'],
+    correctAnswer: '32°F'
+  },
+  {
+    question: 'Which animal can change its color to match its surroundings?',
+    answers: ['Frog', 'Octopus', 'Chameleon', 'Cuttlefish'],
+    correctAnswer: 'Chameleon'
+  },
+  {
+    question: 'What is the capital of Italy?',
+    answers: ['Venice', 'Milan', 'Rome', 'Florence'],
+    correctAnswer: 'Rome'
+  },
+  {
+    question: 'Which planet is known for its rings?',
+    answers: ['Jupiter', 'Saturn', 'Uranus', 'Neptune'],
+    correctAnswer: 'Saturn'
+  },
+  {
+    question: 'Who wrote "The Theory of Relativity"?',
+    answers: ['Isaac Newton', 'Albert Einstein', 'Stephen Hawking', 'Galileo Galilei'],
+    correctAnswer: 'Albert Einstein'
+  },
+  {
+    question: 'What is the longest river in the world?',
+    answers: ['Amazon River', 'Nile River', 'Yangtze River', 'Mississippi River'],
+    correctAnswer: 'Nile River'
+  },
+  {
+    question: 'Which country invented tea?',
+    answers: ['India', 'Japan', 'China', 'England'],
+    correctAnswer: 'China'
+  },
+  {
+    question: 'What is the currency of Japan?',
+    answers: ['Won', 'Yen', 'Yuan', 'Ringgit'],
+    correctAnswer: 'Yen'
+  },
+  {
+    question: 'Which vitamin is produced when the human body is exposed to sunlight?',
+    answers: ['Vitamin A', 'Vitamin B', 'Vitamin C', 'Vitamin D'],
+    correctAnswer: 'Vitamin D'
+  },
+  {
+    question: 'What is the capital of Egypt?',
+    answers: ['Alexandria', 'Cairo', 'Luxor', 'Giza'],
+    correctAnswer: 'Cairo'
+  },
+  {
+    question: 'Which animal is known to laugh when tickled?',
+    answers: ['Chimpanzee', 'Dolphin', 'Rat', 'Dog'],
+    correctAnswer: 'Rat'
+  },
+  {
+    question: 'What is the largest species of shark?',
+    answers: ['Great White Shark', 'Tiger Shark', 'Whale Shark', 'Hammerhead Shark'],
+    correctAnswer: 'Whale Shark'
+  },
+  {
+    question: 'Which country is the largest by land area?',
+    answers: ['Canada', 'China', 'United States', 'Russia'],
+    correctAnswer: 'Russia'
+  },
+  {
+    question: 'What is the boiling point of water in Celsius?',
+    answers: ['0°C', '32°C', '100°C', '212°C'],
+    correctAnswer: '100°C'
+  },
+  {
+    question: 'Which fruit is known as the "king of fruits"?',
+    answers: ['Apple', 'Banana', 'Mango', 'Durian'],
+    correctAnswer: 'Durian'
+  },
+  {
+    question: 'What is the capital of Brazil?',
+    answers: ['Rio de Janeiro', 'São Paulo', 'Brasília', 'Salvador'],
+    correctAnswer: 'Brasília'
+  },
+  {
+    question: 'Which planet is the hottest in our solar system?',
+    answers: ['Mercury', 'Venus', 'Mars', 'Jupiter'],
+    correctAnswer: 'Venus'
+  },
+  {
+    question: 'Who was the first person to step on the Moon?',
+    answers: ['Buzz Aldrin', 'Neil Armstrong', 'Michael Collins', 'Yuri Gagarin'],
+    correctAnswer: 'Neil Armstrong'
+  },
+  {
+    question: 'What is the largest bird in the world?',
+    answers: ['Eagle', 'Albatross', 'Ostrich', 'Emu'],
+    correctAnswer: 'Ostrich'
+  },
+  {
+    question: 'Which country is the largest producer of coffee?',
+    answers: ['Colombia', 'Vietnam', 'Brazil', 'Ethiopia'],
+    correctAnswer: 'Brazil'
+  },
+  {
+    question: 'What is the capital of Spain?',
+    answers: ['Barcelona', 'Seville', 'Madrid', 'Valencia'],
+    correctAnswer: 'Madrid'
+  },
+  {
+    question: 'Which animal has the longest lifespan?',
+    answers: ['Elephant', 'Giant Tortoise', 'Bowhead Whale', 'Greenland Shark'],
+    correctAnswer: 'Greenland Shark'
+  },
+  {
+    question: 'What is the smallest country in the world?',
+    answers: ['Monaco', 'Vatican City', 'San Marino', 'Liechtenstein'],
+    correctAnswer: 'Vatican City'
+  },
+  {
+    question: 'Which planet has the Great Red Spot?',
+    answers: ['Mars', 'Jupiter', 'Saturn', 'Neptune'],
+    correctAnswer: 'Jupiter'
+  },
+  {
+    question: 'Who painted "The Starry Night"?',
+    answers: ['Pablo Picasso', 'Vincent van Gogh', 'Claude Monet', 'Salvador Dalí'],
+    correctAnswer: 'Vincent van Gogh'
+  },
+  {
+    question: 'What is the capital of Germany?',
+    answers: ['Munich', 'Hamburg', 'Berlin', 'Frankfurt'],
+    correctAnswer: 'Berlin'
+  },
+  {
+    question: 'Which blood type is the universal donor?',
+    answers: ['A', 'B', 'AB', 'O'],
+    correctAnswer: 'O'
+  },
+  {
+    question: 'What is the largest lake in the world?',
+    answers: ['Caspian Sea', 'Lake Superior', 'Lake Victoria', 'Lake Baikal'],
+    correctAnswer: 'Caspian Sea'
+  },
+  {
+    question: 'Which country has the most time zones?',
+    answers: ['United States', 'Russia', 'China', 'France'],
+    correctAnswer: 'France'
+  },
+  {
+    question: 'What is the capital of India?',
+    answers: ['Mumbai', 'Kolkata', 'New Delhi', 'Bangalore'],
+    correctAnswer: 'New Delhi'
+  },
+  {
+    question: 'Which animal has three hearts?',
+    answers: ['Squid', 'Octopus', 'Cuttlefish', 'Nautilus'],
+    correctAnswer: 'Octopus'
+  },
+  {
+    question: 'What is the largest volcano in the solar system?',
+    answers: ['Mount Everest', 'Mauna Loa', 'Olympus Mons', 'Mount Vesuvius'],
+    correctAnswer: 'Olympus Mons'
+  },
+  {
+    question: 'Which country is the largest producer of chocolate?',
+    answers: ['Switzerland', 'Belgium', 'Ivory Coast', 'Germany'],
+    correctAnswer: 'Ivory Coast'
+  },
+  {
+    question: 'What is the capital of China?',
+    answers: ['Shanghai', 'Beijing', 'Hong Kong', 'Guangzhou'],
+    correctAnswer: 'Beijing'
+  },
+  {
+    question: 'Which planet rotates on its side?',
+    answers: ['Venus', 'Mars', 'Uranus', 'Neptune'],
+    correctAnswer: 'Uranus'
+  },
+  {
+    question: 'Who invented the light bulb?',
+    answers: ['Nikola Tesla', 'Thomas Edison', 'Alexander Graham Bell', 'Benjamin Franklin'],
+    correctAnswer: 'Thomas Edison'
+  },
+  {
+    question: 'What is the fastest bird in the world?',
+    answers: ['Eagle', 'Falcon', 'Swift', 'Peregrine Falcon'],
+    correctAnswer: 'Peregrine Falcon'
+  },
+  {
+    question: 'Which country has the most islands?',
+    answers: ['Philippines', 'Indonesia', 'Sweden', 'Canada'],
+    correctAnswer: 'Sweden'
+  },
+  {
+    question: 'What is the capital of Russia?',
+    answers: ['St. Petersburg', 'Moscow', 'Novosibirsk', 'Kazan'],
+    correctAnswer: 'Moscow'
+  },
+  {
+    question: 'Which animal can sleep for three years?',
+    answers: ['Koala', 'Sloth', 'Snail', 'Bear'],
+    correctAnswer: 'Snail'
+  }
+]
+
+function all() {
+  randomIndex = Math.floor(Math.random() * questions.length);
+  displayQuestion(questions[randomIndex].question);
+  a.innerText = questions[randomIndex].answers[0];
+  b.innerText = questions[randomIndex].answers[1];
+  c.innerText = questions[randomIndex].answers[2];
+  d.innerText = questions[randomIndex].answers[3];
+  
+  a.addEventListener('click', () => {
+    if (questions[randomIndex].answers[0] === questions[randomIndex].correctAnswer) {
+      a.style.border = '4px solid green';
+    } else {
+      a.style.border = '4px solid red';
+    }
+  });
+  
+  b.addEventListener('click', () => {
+    if (questions[randomIndex].answers[1] === questions[randomIndex].correctAnswer) {
+      b.style.border = '4px solid green';
+    } else {
+      b.style.border = '4px solid red';
+    }
+  });
+  
+  c.addEventListener('click', () => {
+    if (questions[randomIndex].answers[2] === questions[randomIndex].correctAnswer) {
+      c.style.border = '4px solid green';
+    } else {
+      c.style.border = '4px solid red';
+    }
+  });
+  
+  d.addEventListener('click', () => {
+    if (questions[randomIndex].answers[3] === questions[randomIndex].correctAnswer) {
+      d.style.border = '4px solid green';
+    } else {
+      d.style.border = '4px solid red';
+    }
+  });
+}
+
+start.addEventListener('click', () => {
+  all();
+  start.innerText='next'
+  start.style.backgroundColor='green'
+  a.style.border = '1px solid #DD9C21'
+  b.style.border = '1px solid #DD9C21'
+  c.style.border = '1px solid #DD9C21'
+  d.style.border = '1px solid #DD9C21'
+});
