@@ -7,7 +7,7 @@ A minimalist, interactive quiz game built with HTML, CSS, and JavaScript. Test y
  🖥️ Screenshots  
 | Question Screen | Correct Answer |  
 |----------------|----------------|  
-| ![Question](quiz-screenshot1.png) | ![Correct](quiz-screenshot2.png) | !start(quiz-screenshot3.png)
+| ![Question]([quiz-screenshot1.png](https://github.com/princeGupta131/Quiz-game/blob/main/Screenshot_2025-06-21-15-53-59-73_f9a7afa717ced9e1fc9be9833291031a.jpg)) | ![Correct](quiz-screenshot2.png) | !start(quiz-screenshot3.png)
 
  🛠️ How It Works  
 1. Click **"Start"** to load a random question  
